@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}
+menu
+{% end %}
+
+{% block style_block %}
+  <link type="text/css" rel="stylesheet" href="{{ static_url('css/show_menu.css') }}"/>
+{% end %}
+
+{% block content %}
+  <div id='app'>
+    <div class="maintext text-center">
+        <p>${ title }</p>
+    </div>
+    <div class='row'>
+      <div class='menu'>
+        <div class="col m2 waves-effect waves-light" v-for="btn in btns">
+          <div class='card light-blue darken-1 btn-box-r2'>
+            <div v-on:click="selectButton($index)" class="light-blue darken-1">
+              <div class='card-content'>
+                <div class='btn-label-box'>
+                  <h2 class="truncate left-align white-text btn-label">${ ($index + 1) }. ${ btn.label }</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% end %}
+
+{% block footer %}
+{% end %}
+
+{% block tail_script %}
+  <script type="text/javascript">
+    var menuId = "{{ menu_id }}";
+  </script>
+  <script type='text/javascript' src="{{ static_url('js/show_menu.js') }}"></script>
+{% end %}

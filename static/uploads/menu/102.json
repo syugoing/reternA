@@ -1,0 +1,9 @@
+{
+  "menuId": "102",
+  "title": "変われー！",
+  "btns": [{
+    "label": "Tokyo"
+  }, {
+    "label": "Osaka"
+  }]
+}
